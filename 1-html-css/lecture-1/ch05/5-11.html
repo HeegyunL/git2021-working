@@ -1,0 +1,78 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1">
+  <style>
+    /* x-small : 모바일 세로 */
+    nav ul{
+      display: flex;
+      flex-direction: column;
+      padding : 0;
+      list-style: none;
+    }
+
+    /* small : 모바일 가로화면, 태블릿(저렴한) 세로화면 */
+    @media (min-width: 576px) {
+      nav ul{
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+    /* medium : 태블릿 (저렴한) 가로 화면, 태블릿 세로화면 이상 */
+    @media (min-width : 768px) {
+
+      body{
+        width :700px;
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom : 1rem;
+      }
+      nav{
+        float :left;
+        width:200px;
+      }
+      article{
+        float:left;
+        width: calc(100% - 200px - 1rem);
+        margin-left : 1rem;
+      }
+
+      nav ul{
+        flex-direction: column;
+        position:sticky;
+        top:3rem;
+      }
+    }
+    
+    header, nav,article{
+      background-color : burlywood;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <header>The header</header>
+  <nav>
+      <ul>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3</li>
+      </ul>
+  </nav>
+  <article>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, mollitia reprehenderit distinctio reiciendis, enim dolore tenetur vitae iste quod possimus totam nesciunt laborum officia dolores nam dolorum aliquid, voluptatibus modi!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati ex aliquid doloremque quidem sint quis? Assumenda corrupti saepe expedita quibusdam, exercitationem voluptas et repellendus labore aspernatur ipsum eveniet mollitia!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptatibus, debitis eos sit nulla sapiente, dignissimos laborum in itaque, vero dolorum aperiam at. Possimus vero accusantium et voluptatem, non earum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit provident harum molestias voluptatum facere aliquid, sapiente quis quod, qui hic officia! Officia beatae animi at provident deleniti facilis voluptates harum?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod consequatur facilis delectus veritatis, minus quisquam est minima ea debitis quasi velit soluta eveniet ut! Voluptate aliquid tenetur itaque architecto eveniet!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maxime dolores voluptates fugit consequatur placeat eaque saepe repellendus harum quia optio doloribus reiciendis voluptatem ad eum quam, similique amet eligendi.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maxime dolores voluptates fugit consequatur placeat eaque saepe repellendus harum quia optio doloribus reiciendis voluptatem ad eum quam, similique amet eligendi.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maxime dolores voluptates fugit consequatur placeat eaque saepe repellendus harum quia optio doloribus reiciendis voluptatem ad eum quam, similique amet eligendi.</p>
+  </article>
+</body>
+
+</html>

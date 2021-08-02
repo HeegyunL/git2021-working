@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25 */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Sunflower', sans-serif;
+      width: 400px;
+      background-image: url("./img/kyle-glenn-vyCI1w0yzHQ-unsplash.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position-x: center;
+      background-repeat: no-repeat;
+
+      display: grid;
+      gap: 0.5rem; 
+      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "header   header"
+        "banner   banner"
+        "nav      image"
+        "content  content"
+        "color    color"
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    header {
+      grid-area: header;
+    }
+
+    header>h1 {
+      background-color:#eff1f3;
+      color: #9e2a2b;
+      padding: 0.5rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .banner {
+      grid-area: banner;
+
+      height: 200px;
+      background-image: url("./img/banner.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+
+      box-shadow: 0px 1px 5px #bc6c25;
+    }
+
+    nav {
+      grid-area: nav;
+      background-color: #eff1f3;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav>ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100px;
+      color: #283618;
+    }
+
+    .image {
+      grid-area: image;
+    }
+
+    article {
+      grid-area: content;
+      background-color: #fefae0;
+      padding: 0.5rem;
+    }
+
+    article>h2,
+    article>h3 {
+      color: #4E3822;
+    }
+
+    article>p {
+      color: #9E2A2B;
+    }
+
+    .color-box {
+      grid-area: color;
+      display: flex;
+      height: 100px;
+    }
+
+    .color-box>div {
+      flex: 1 1 auto;
+    }
+
+    .color-box>div:nth-child(1) {
+      background-color: #FAEBD7;
+    }
+
+    .color-box>div:nth-child(2) {
+      background-color: #9E2A2B;
+    }
+
+    .color-box>div:nth-child(3) {
+      background-color: #eff1f3;
+    }
+
+    .color-box>div:nth-child(4) {
+      background-color: #c0c5c1;
+    }
+
+    .color-box>div:nth-child(5) {
+      background-color: ghostwhite;
+    }
+    .color-box>div:nth-child(6) {
+      background-color: #4E3822;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 텍스트 스타일(h1) -->
+  <header>
+    <h1>귀찮은데 이거!</h1>
+  </header>
+  <!-- 대표 이미지(배너이미지)-->
+  <div class="banner">
+  </div>
+  <!-- 대표 문구(네비게이션) -->
+  <nav>
+    <ul>
+      <li>나폴리탄</li>
+      <li>두부깻잎구이</li>
+      <li>짜글이</li>
+    </ul>
+  </nav>
+  <!-- 대표 이미지(컨텐트이미지) -->
+  <div class="image">
+    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2017/11/07/ca8c24608189aaf9d376f14b3f3be57c1.jpg"
+      width="100%">
+  </div>
+  <!-- 텍스트 스타일(h2, h3, p) -->
+  <article>
+    <h2 style="margin: 0; padding: 0;">이것은 H2 제목입니다.</h2>
+    <h3 style="margin: 0; padding: 0;">이것은 H3 제목입니다.</h3>
+    <p style="margin: 0; padding: 0;">이것은 내용입니다.</p>
+  </article>
+  <!-- 컬러 스타일 -->
+  <div class="color-box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+</body>
+
+</html>

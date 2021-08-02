@@ -1,0 +1,654 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=divice-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap" rel="stylesheet">
+  <title>만들기 쉬운 요리레시피</title>
+  <style>
+    *{
+      box-sizing: border-box; 
+      font-family: 'Sunflower', sans-serif;
+    }
+    html{
+      font-size : 20px; 
+    }
+
+    .main-title{
+      color : #9e2a2b;
+      background-color:#eff1f3;
+
+      margin-bottom : 0rem;
+      text-align: center;
+      text-shadow:1px 1px 1px black;
+    }  
+    body{
+      background-color: rgb(255, 255, 248);
+      color :#001427;
+      margin : 0 auto;
+
+      background-image: url("./img/kyle-glenn-vyCI1w0yzHQ-unsplash.jpg");
+      
+      background-repeat : no-repeat;
+      background-position: center;
+      background-size:cover;
+      background-attachment: fixed;
+      
+
+     
+    }
+    article{
+      margin-bottom: 0rem;
+      border: 1px solid black;
+    }
+    section{
+      scroll-margin-top: 4rem;
+    }
+    .bgc{
+      background-color: #FAEBD7;
+      /* background-color: #c1121f; */
+      border-radius: 30px 30px 0 0;
+    }
+    body nav{
+      position:sticky;
+      top:1rem;
+      z-index: 10;
+    }
+    
+    body>nav>ul{
+      font-size : 1.2rem;
+      background-color :#eff1f3;
+      list-style:none;
+      text-align:center;
+      
+      margin:0;
+      border-radius: 0 0 25px 25px;
+      
+      display:flex;
+    }
+    
+    article h2{
+      color:#9E2A2B;
+      background-color:#FDC500;
+      font-size: 1.5rem;
+      margin-top:0;
+
+      padding:1rem 0 0 3rem; 
+      border-radius: 25px 25px 0 0;      
+      border : 2px solid black;
+    }
+    
+    article h2::first-letter{
+      font-size: 2rem;
+    }
+    
+    .MENU{
+      background-color: #eff1f3;
+      font-size: 2rem;
+      
+    }
+    table{
+      background-color :#dad2d8;
+      border-collapse: collapse;
+      text-align: center;
+      width :80%; 
+      margin : 0 auto;
+      margin-top: 1rem; 
+      box-shadow: 2px 2px 2px black;
+    }
+    .name{
+      background-color:#c0c5c1;
+      font-size: 1.2rem;
+    }
+    .main-routine{
+      background-color: ghostwhite;
+      color : #4E3822;
+      font-size: 1.2rem;
+    }
+    .main-routine::before{
+      content:"🧾";
+    }
+    .list{
+      background-color: ghostwhite;
+      color : #4E3822;
+      margin-bottom: 0px;
+    }
+    .list::before {
+      content:"🔎"
+    }
+    section th, section td{
+      border-bottom : 1px solid black;
+    }
+    .img{
+      width:80%;
+      margin:100px 10px 100px 50px;
+      /* padding: 100px; */
+      height: 600px;
+      /* flex-flow : column wrap; */
+      border :3px solid black;
+      box-shadow :5px 5px 1px #FDC500;
+    }
+    tbody>tr:nth-child(2n){
+      background-color: wheat;
+    }
+    ol>li:nth-child(2n){
+      background-color: wheat;
+    }
+    tbody>tr:nth-child(2n-1){
+      background-color: ghostwhite;
+    }
+    ol>li:nth-child(2n-1){
+      background-color: ghostwhite;
+    }
+    .routine{
+      text-align: center;
+      padding-left: 0;
+    }
+    ol>li{
+      list-style: none;
+      counter-increment: rint;
+    }
+    ol>li::before{
+      content: counter(rint) ".";
+      margin-right : 1rem;
+    }
+    a{
+      color : #9e2a2b;
+      text-decoration: none;
+    }
+    nav a:visited{
+      color:#9E2A2B
+    }
+    section a:visited{
+      color: #9E2A2B;      
+    }
+    a:hover{
+      background-color: burlywood;
+    }
+    .move_top{
+      display: flex;
+      justify-content: center;
+      font-size: 1.5rem;
+      
+      margin: 0 auto;
+    }
+    section li:hover{
+      background-color: thistle;
+    }
+    section tr:hover{
+      background-color: thistle;
+    }
+    body .side1{
+      background-color: #FAEBD7;
+      border: 1px solid black;
+      text-align: center;
+
+      position :sticky;
+      border-radius: 10px;
+      
+    }
+    .side_img{
+      display: inline-block;
+      height:100px;
+    }
+    footer{
+      clear:both;
+      text-align: center;
+      background-color:wheat;
+      color:rgb(78, 74, 74);
+
+      margin-bottom :1rem;
+    }
+    .main_banner{
+      height:350px;
+      text-align: center;
+      
+      border: 1px solid black; 
+      background-image: url("./img/banner.jpg");
+  
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: center;
+    }
+    .side2 {
+      background-color : #FAEBD7;
+      text-align: center;
+      height:fit-content;
+
+      border-radius: 25px 25px 10px 10px;
+      
+    }
+    .side2 p{
+      color : #9E2A2B;
+      font-size : 20px;
+      background-color:#FDC500;
+
+      margin:0;
+      border-radius: 25px 25px 0 0;
+    }
+    .side2 .img_box1{
+      display:inline-block;
+      width : 200px;
+      height: fit-content;
+      border: 1px solid black;
+      padding:10px;
+      flex-wrap: wrap;
+      align-items: center;
+      box-shadow:1px 1px 5px black;
+    }
+    .MENU{
+      display:flex;
+      justify-content: center;
+      color : #9E2A2B;
+      background-color:#FDC500;
+      margin:0;
+      border-radius: 15px 15px 0 0;
+      border :3px solid black;
+    }
+    .menu-list{
+      display:flex;
+      justify-content: space-evenly;
+      padding-left: 0;
+      border :3px solid black;
+    }
+    .list1::after{
+      
+      flex-basis:130px;
+      content:"👈"
+    }
+    .rmd{
+      list-style :none;
+      display: flex;
+      justify-content: space-evenly;
+      padding-left: 0;
+    }
+    .img3{
+      display :flex;
+      justify-content: space-evenly;      
+    }
+    /* grid */
+    header{
+      grid-area: header;
+    }
+    nav{
+      grid-area : side1;
+    }
+    .main_banner{
+      grid-area: banner;
+    }
+    .side2{
+      grid-area:side2;
+    }
+    article{
+      grid-area : content;
+    }
+    .side1{
+      grid-area: side3;
+    }
+    footer{
+      grid-area : footer;
+    }
+    /* grid */
+    body{
+      display:grid;
+      margin: 0 auto;
+
+      grid-template-areas: 
+      "header"
+      "side1"
+      "banner"
+      "side2"
+      "content"
+      "side3"
+      "footer";
+    }
+    @media(min-width:768px){
+      body{
+      
+      width:700px;
+      margin:0 auto;
+      grid-template-columns: 2fr 5fr;
+      grid-template-areas: 
+      "header   header"
+      "banner   banner"
+      "side2    side2"
+      "side1     content"
+      "side1    side3"
+      "footer   footer";
+      }
+      nav{
+        height: fit-content;
+        position : sticky;
+      }
+      nav ul{
+        flex-direction:row;
+        justify-content: space-evenly;
+      }
+      .main_banner{
+        height : 300px;
+      }
+    }
+    @media(min-width:1200px){
+      body{
+        width:1200px;
+        grid-template-columns: 3fr 7fr 2fr ;
+        grid-template-areas: 
+        "header   header    header"
+        "banner   banner    banner"
+        "side1    content   side2"
+        "side3    side3     side3"
+        "footer   footer    footer";
+      }
+      .side2{
+        top:13rem;
+        height: fit-content;
+        position : sticky;
+      }
+      
+      .side2 div{
+        flex-direction:column;
+        flex-basis:100px;
+        justify-content: space-between;
+      }
+      .side2 .img_box1{
+        width:200px;
+        height:fit-content;
+        padding:0;
+        flex-wrap : nowrap;
+      }
+      .main_banner{
+        height : 500px;
+        background-position: center;
+      }
+      
+    }
+    .side2_space{
+      margin : 5px auto;
+    }
+    
+  </style>
+</head>
+<body >
+  <header>
+    <h1 class="main-title" id="top">🥄만들기 쉬운 요리🥄</h1>
+  </header>
+  <nav>
+    <h3 class="MENU">M E N U</h3>
+    <ul class="menu-list">
+      <li class="list1">
+        <a href="#Menu-1">나폴리탄</a>
+      </li>
+      <li class="list1">
+        <a href="#Menu-2">깻잎두부구이</a>
+      </li>
+      <li class="list1">
+        <a href="#Menu-3">짜글이</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="main_banner">
+  </div>
+  <aside class="side2">
+    <p><b>오늘의 반찬</b></p>
+    <div class="img3">
+      <a href="https://www.10000recipe.com/recipe/6961890" target="_blank">
+      <img src="https://recipe1.ezmember.co.kr/cache/recipe/2021/07/17/5e1fa4bcd1634108c0103a80b957e1d11_m.jpg" class="img_box1">
+      </a>
+      <a href="https://www.10000recipe.com" target="_blank" class="side2_space">
+        <img src="https://recipe1.ezmember.co.kr/img/logo4.png" class="img_box1">
+      </a>
+      <a href="https://www.10000recipe.com/recipe/6892442" target="_blank">
+      <img src="https://recipe1.ezmember.co.kr/cache/recipe/2018/07/12/211a169445837d4f72ab65c370acd4e61_m.jpg" class="img_box1">
+      </a>
+    </div>
+  </aside>
+  <article class="bgc">
+    <section id="Menu-1">
+      <h2>
+        <a href="https://www.10000recipe.com/recipe/6928908"target="_blank">나폴리탄</a>
+      </h2>
+      <img class="img" src="https://recipe1.ezmember.co.kr/cache/recipe/2020/03/20/31bc8b6b092752f39991b62698c5074f1.jpg"width=100%>
+      </div>
+      <h3 class="list">재료 목록</h3>
+      <table width="500">
+        <thead>
+          <tr class="name">
+            <th>재료명</th>
+            <th>재료량</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>파스타면</strong>
+            </td>
+            <td>
+              <em>1인분</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>비엔나소세지</strong>
+            </td>
+            <td>
+              <em>7개</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>양파</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/2</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>설탕</strong>
+            </td>
+            <td>
+              <em>1/2스푼</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>케첩</strong>
+            </td>
+            <td>
+              <em>3스푼</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>굴소스</strong>
+            </td>
+            <td>
+              <em>1/2스푼</em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        <h3 class="main-routine">조리 순서</h3>
+        <ol = class="routine">
+          <li>양파는 채썰고 비엔나소세지는 4등분 해주세용</li>
+          <li>분량의 소스도 만들어 준비하고 파스타면은 끓는물어 15분정도 삶아주세용</li>
+          <li>팬에 기름을 두르고 양파향이 날때까지 볶아주세용</li>
+          <li>소세지를 추가해 익을때까지 볶아 줍니다</li>
+          <li>면을 넣고 기름에 코팅 되는 느낌으로 풀어 주세용</li>
+          <li>소스를 넣고 30초간 볶아주면 완성 입니당</li>
+        </ol>
+        <p class="move_top"><a href="#top">👆</a></p>
+    </section>
+    <section id="Menu-2">
+      <h2>
+        <a href="https://www.10000recipe.com/recipe/6863696"target="_blank">깻잎두부구이</a>
+      </h2>    
+      <img class="img" src="./img/두부깻잎구이.jpg"width=100%>
+      <h3 class="list">재료 목록</h3>
+      <table width="500">
+        <thead>
+          <tr class="name">
+            <th>재료명</th>
+            <th>재료량</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>간장</strong>
+            </td>
+            <td>
+              <em>2숟가락</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>참기름</strong>
+            </td>
+            <td>
+              <em>1/2숟가락</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>깻잎</strong>
+            </td>
+            <td>
+              <em>3장</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>맛술</strong>
+            </td>
+            <td>
+              <em>1숟가락</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>통깨</strong>
+            </td>
+            <td>
+              <em>1숟가락</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>두부</strong>
+            </td>
+            <td>
+              <em>1모</em>
+            </td>
+          </tr>          
+        </tbody>
+      </table>
+      <h3 class="main-routine">조리 순서</h3>
+      <ol class="routine">
+        <li>두부는 먹기좋게 잘라주세요.</li>
+        <li>소금,후추를 솔솔 뿌려 5분정도 놓아둔후에 키친타올로 물기를 제거해주세요</li>
+        <li>비닐봉투에 튀김가루를 넣어 물기제거한 두부에 튀김가루를 묻혀주세요</li>
+        <li>달군팬에 기름을 두른후에 두부를 튀기듯 노릇하게 구워주세요</li>
+        <li>깻잎은 깨끗이 씻어 꼭지를 떼고 돌돌말아 채썰어주세요</li>
+        <li>양념재료를 모두 넣어주시고 깻잎도 넣어 섞어주세요 그릇에 구운두부를 담고 깻잎간장을 올려주시면 되는데요</li>
+      </ol>
+      <p class="move_top"><a href="#top">👆</a></p>
+    </section>
+    <section id="Menu-3">
+      <h2>
+        <a href="https://www.10000recipe.com/recipe/6892088"target="_blank">짜글이</a>
+      </h2>
+      <img class="img" src="https://recipe1.ezmember.co.kr/cache/recipe/2017/02/22/1975518f85b5cf0e00d51fb5f94e422c1.jpg"width=100%>
+      <h3 class="list">재료 목록</h3>
+      <table width="500">
+        <thead>
+          <tr class="name">
+            <th>재료명</th>
+            <th>재료량</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>스팸</strong>
+            </td>
+            <td>
+              <em>&nbsp;200</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>양파</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/4</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>감자</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/4</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>두부</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/4</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>애호박</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/4</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>물</strong>
+            </td>
+            <td>
+              <em>&nbsp;2컵</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>대파</strong>
+            </td>
+            <td>
+              <em>&nbsp;1/4</em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="main-routine">조리 순서</h3>
+      <ol class="routine">
+        <li>재료들은 모두 깍둑 썰어 준비한다.</li>
+        <li>양념재료를 섞는다.</li>
+        <li>냄비에 재료들을 모두 담고, 물을 붓고 끓인다.</li>
+        <li>섞은 양념을 넣고 끓여 완성한다.</li>
+      </ol>
+      <p class="move_top">
+        <a href="#top">👆</a>
+      </p>
+    </section>
+  </article>
+  <aside class="side1">
+    <h1>내일의 추천메뉴</h1>
+    <ul class="rmd">
+      <li><a href = "https://www.10000recipe.com/recipe/6915939" target="_blank"><strong>🍜짜장면</strong></a></li>
+      <li><a href = "https://www.10000recipe.com/recipe/6841208" target="_blank"><strong>🍲소고기무국</strong></a></li>
+      <li><a href = "https://www.10000recipe.com/recipe/6894096" target="_blank"><strong>🍲어묵탕</strong></a></li>
+    </ul>
+  </aside>
+  <footer>
+    <address>서울특별시 동작구</address>
+  </footer>
+</body>
+</html>
