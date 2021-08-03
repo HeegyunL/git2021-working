@@ -1,9 +1,15 @@
 <html>
   <body>
     <script>
-      let answer=prompt("  what's the 'official' name of JavaScript?"  )
+      //1.프롬프트 띄우기
+      let answer=prompt("  what's the \"official\" name of JavaScript?"  )
+      // ``를 사용하거나 \\를 사용해서 중복사용가능
+      // let answer=prompt(`  what's the "official" name of JavaScript?`  )
 
-      if(answer == 'ECMAScript'){
+        // ECMAScript -> ecmascript
+        // toLowerCase() : 소문자 변환
+        // toupperCase() : 대문자 변환
+      if(answer === 'ECMAScript'){
         alert('정답입니다');
       }else {
         alert('아쉽군요 \n 정답은 ECMAScript입니다');

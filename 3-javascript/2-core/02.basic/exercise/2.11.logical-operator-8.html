@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <script>
+      if (-1 || 0) alert( 'first' );    //-1 = true , -1 ||0 => -1    first
+      if (-1 && 0) alert( 'second' );   //-1 && 0 -> 0(false)    x
+      if (null || -1 && 1) alert( 'third' );    
+      // -1 && 1        -> -1
+      // null || -1     ->-1    -> true  -> third 
+    </script>
+  </body>
+</html>
