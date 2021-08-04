@@ -1,7 +1,16 @@
 <html>
   <body>
     <script>
-      
+      let age = prompt('나이를 입력하시오');
+      function checkAge(age) {
+        if (age > 18) {
+          return true;
+          // else는 필요한가?  동일하다...
+        }  {
+          return confirm('보호자의 동의를 받으셨나요?');
+        }
+      }
+      checkAge(age);
     </script>
   </body>
 </html>
