@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <script>
+      let me ={
+        // name : "hee",
+        // familyname : "lee",
+        age : 28,
+        weight : 67
+
+      };
+
+      console.log(typeof me["age"]);
+      // console.log(typeof me.name);
+
+      function multiplyNumeric(abc) {
+        // 변환
+       for (let prop in abc){
+       if(typeof abc[prop] =='number'){
+          abc[prop] = abc[prop] * 2;
+        }
+      }
+      return abc;
+    }
+    console.log(multiplyNumeric(me));
+
+    </script>
+  </body>
+</html>
