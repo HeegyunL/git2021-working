@@ -2,11 +2,13 @@
   <body>
     <script>
       let numb="";
-
+      let sum = 0;
       while(true){
         let numb = +prompt('숫자를 입력하시오','');
         if(numb >100 || numb =="" || numb ==null) break;
+        sum += numb;
       }
+      console.log(sum);
 
     </script>
   </body>
