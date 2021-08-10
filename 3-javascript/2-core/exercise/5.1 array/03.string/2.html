@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <script>
+      let str1 = 'buy ViAgRA now';
+      let str2 = 'free xxxxx';
+      let str3 = 'innocent rabbit';
+
+      function checkSpam(a){
+        let str = a.toLowerCase();
+        if(str.indexOf('xxx') != -1 ){
+          console.log(true);
+        }else if (str.indexOf('viagra') != -1){
+          console.log(true)
+        }else{
+          console.log(false)
+        }
+      }
+      checkSpam(str3)
+      </script>
+  </body>
+</html>
