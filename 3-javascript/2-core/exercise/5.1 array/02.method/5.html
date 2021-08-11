@@ -5,10 +5,11 @@
 
       let sorted = copySorted(arr);
       function copySorted(a){
-        a.sort();
-        console.log(a)
+        let copy = [...a];
+        copy.sort();
+        console.log(copy)
       }
-      
+      console.log(arr)
     </script>
   </body>
 </html>

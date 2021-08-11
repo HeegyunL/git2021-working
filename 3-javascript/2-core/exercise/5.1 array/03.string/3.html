@@ -1,14 +1,15 @@
 <html>
   <body>
     <script>
-      let str ="What I'd like to tell on this topic is:";
+      let str1 ="What I'd like to tell on this topic is:";
+      let str2 = "hello everyone!"
       function truncate(a, b){
       if (a.length > b) {
         a = a.slice(0, b) + "..." ;
         console.log(a);
-      }
+      }else {console.log(a)}
     }
-    truncate(str, 20);
+    truncate(str1, 20);
     </script>
   </body>
 </html>
