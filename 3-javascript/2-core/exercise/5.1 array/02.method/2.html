@@ -4,17 +4,18 @@
       let arr= [5,3,8,1];
       
       function filterRange(ar,chut,dul){
-        let filteredArr = [];
-        for(let numb of ar){
-          if (numb<=dul && numb >=chut){
-            filteredArr.push(numb); 
-          }
-        }
-        return console.log(filteredArr);
+        return ar.filter (item => item>=chut && item<=dul);
+        // let filteredArr = [];
+        // for(let numb of ar){
+        //   if (numb<=dul && numb >=chut){
+        //     filteredArr.push(numb); 
+        //   }
+        // }
+        // return console.log(filteredArr);
          
       }
       let filtered = filterRange(arr,1,4)
-      console.log(arr)
+      console.log(filtered)
     </script>
   </body>
 </html>

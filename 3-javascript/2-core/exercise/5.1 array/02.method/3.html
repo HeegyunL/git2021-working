@@ -4,17 +4,23 @@
       let arr= [5,3,8,1];
       
       function filterRangeInPlace(ar,chut,dul){
-        let filteredArr = [];
-        for(let numb of ar){
-          if (numb >=dul || numb <chut){
-            filteredArr.push(numb);
-          }
-        }
-        return console.log(filteredArr);
-         
+       let pop= ar.filter(item => item>=chut && item <=dul)
+        // let filteredArr = [];
+        // for(let numb of ar){
+        //   if (numb >=dul || numb <chut){
+        //     filteredArr.push(numb);
+        //   }
+        // }
+        // return console.log(filteredArr);
+      
+         for(let items of pop){
+           if(items < chut){
+             ar.slice()
+           }
+         }
       }
-      let filtered = filterRangeInPlace(arr,1,4)
-      console.log(arr)
+      // let filtered = filterRangeInPlace(arr,1,4)
+      console.log(filterRangeInPlace(arr,1,8))
     </script>
   </body>
 </html>

@@ -1,19 +1,25 @@
 <html>
   <body>
     <script>
-      let x = 
-         "background-color";
-
       function spliT(name){
          let arr= name.split('-');
+         let sum ="";
           for(let names of arr){
-            nameF = names[0].toUpperCase();
-            name = nameF + names.slice(1);
-            console.log(name);
+            if(names == 0) {
+              continue;
+            }else{
+            let nameF = names[0].toUpperCase();
+            name = nameF + names.substr(1);
+            sum +=name;
+            }
           }
+          return console.log(sum)
+          
         }
-       spliT(x);
-
+       spliT("background-color");
+       spliT("list-style-image");
+       spliT("-webkit-transition");
+       
 
         
 
