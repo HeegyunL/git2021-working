@@ -1,0 +1,38 @@
+<h<html>
+  <body>
+    <style>
+      .alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+      }
+      </style>
+      <!-- beforebegin : 시작태그 이전에 -->
+      <div id="container">
+        <!-- afterbegin : 대그 시작 다음에(첫번째 자식요소) -->
+        <div> annother 태크</div>
+        <!-- beforeend  : 끝태그 이전에 (마지막 자식요소) -->
+      </div>
+      <!-- afterend : 끝태그 다음에 -->
+    <script>
+      // setTimeout(() =>{
+      //   container.insertAdjacentHTML('beforebegin','<p>안녕하세요</p>');
+      //   container.insertAdjacentHTML('afterend','<p>안녕히 가세요</p>');
+      // },2000)
+
+      // 1.추가할 요소 문자열을 생성
+      // back-quote (`) , template-literal(조각 UI 표기법)
+      const alert = `
+      <div class = "alert">
+        <strong>안녕하세요!</strong> 중요메시지를 확인하셨습니다.
+      </div>
+      `;
+
+      //2. 요소 위치에 맞게 추가
+      const container = document.querySelector('#container');
+      container.insertAdjacentHTML('afterbegin', alert)
+    </script>
+  </body>
+</html>
