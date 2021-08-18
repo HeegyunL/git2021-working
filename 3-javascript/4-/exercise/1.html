@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <textarea id="textarea"></textarea>
+    <button id= "clear">clear</button>
+  </body>
+  <script>
+    const textArea = document.querySelector("#textarea")
+    const clear = document.querySelector("#clear")
+
+    textArea.addEventListener('keyup', ()=>{
+      localStorage.setItem("input" ,textArea.value);
+    })
+    clear.addEventListener('click', () =>{
+      textArea.value={};
+      localStorage.removeItem("input");
+    })
+
+    txt.value = localStorage.getItem(storageKey);
+  </script>
+</html>

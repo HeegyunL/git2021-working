@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  </head>
+  <body style="width: 600px; " class="mx-auto">
+    
+    <form id = "formInput">
+    <div>
+      <textarea id="textBox"class="form-control mb-2" placeholder="글을 입력하세요" rows="8"></textarea>
+    </div>
+    <div class= " d-flex">
+      <input class="form-control me-2"  accept="image/png, image/jpeg, image/jpg, video/mp4" type="file" multiple>
+      <button id ="btn"type = "button" class="btn btn-primary text-nowrap">입력</button>
+    </div>
+    </form>
+    <div id="cardForm"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+ 
+
+  </body>
+  <script>
+    const btn = document.querySelector("#btn")
+    const textBox = document.querySelector('#textBox')
+    const fileInput = document.querySelector('input[type="file"]')
+    const cardForm = document.querySelector('#cardForm')
+    const formInput =document.querySelector("#formInput")
+    
+    
+    btn.addEventListener('click' ,add)
+    cardForm.addEventListener('click' , remove)
+    function add(event) {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader;
+
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        const card = `
+        <div class="card mt-2 text-center" style="width: 600px; ">
+          <div id="pic"><img src=${dataUrl} class="img-fluid rounded mt-1" alt="..."></div>
+          <p class="card-text">${textBox.value}</p>
+          <button class="btn btn-outline-secondary remove">지우기</button>
+        </div>
+        `
+        cardForm.insertAdjacentHTML('afterbegin', card)
+        formInput.reset();
+      }
+    }
+    function remove(event) {
+      if(event.target.className.includes("remove")){
+        const btnRemove = event.target;
+         const card = btnRemove.parentNode;
+         card.remove();
+      }
+    }
+    
+  </script>
+</html>
