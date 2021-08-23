@@ -40,9 +40,24 @@
     const tableLi= document.querySelector("#table-li")
     const input = document.querySelector("#input");
     const btn = document.querySelector("#btn");
-    
 
-    name.addEventListener('keyup',(event) =>{ 
+    const tdSple=` 
+      <tr data-id="@id" class ="text-center my-2">  
+        <td >
+            @name
+        </td >
+        <td>       
+            @phone
+        </td>
+        <td>       
+            @mail
+        </td>
+        <td>       
+          <button class="btn btn-secondary btn-primary btn-sm  text-nowrap remove">삭제</button> 
+        </td>
+      </tr>`
+
+    name.addEventListener('keyup',(event) =>{
       if(event.keyCode == 13){
           name.blur();
           add(event)
@@ -65,11 +80,11 @@
     )
     tableLi.addEventListener("click", remove);
     btn.addEventListener("click", add);
-    
+   
     function add(event) {
-      // console.log((name,phone,mail).value);
+      console.log((name,phone,mail).value);
 
-      if (!(name,phone,mail).value) {
+      if (!(name,phone,mail).value) { 
         const warning = `
           <div class="alert alert-danger alert-dismissible my-2" role="alert" id="liveAlert">
             값을 입력하세요
@@ -81,21 +96,17 @@
     return;
       }
 
-      const td1 =
-      ` <tr class ="text-center my-2">  
-          <td >
-              ${name.value}
-          </td >
-          <td>       
-              ${phone.value}
-          </td>
-          <td>       
-              ${mail.value}
-          </td>
-          <td>       
-            <button class="btn btn-secondary btn-primary btn-sm  text-nowrap remove">삭제</button> 
-          </td>
-        </tr>`
+      const data = getData();
+
+      const id = data.length>0 ? data[0].id +1 : 1;
+      data.unshift({id, name :name.value, phone : phone.value, mail : mail.value})
+
+      setData(data);
+      const td1 = tdSple.replace("@id", id)
+      .replace("@name", name.value)
+      .replace("@phone", phone.value)
+      .replace("@mail", mail.value); 
+      
       
 
       tableLi.insertAdjacentHTML("afterbegin", td1);
@@ -106,18 +117,39 @@
       if (event.target.className.includes("remove")) {
         const removeLine = event.target.parentNode;
         const td1 = removeLine.parentNode;
+
+        const data = getData();
+        const newData = data.filter(item => item.id != td1.dataset.id);
+        console.log(newData);
+
         td1.remove();
       }
     }
 
     function setData(data){
       localStorage.setItem("todo",JSON.stringify(data));
-
     }
 
     function getData(){
-      // JSON 문자열을 배열로 변환하여 반환
-      return JSON.parse(localStorage.getItem("todo"))
+      let data = JSON.parse(localStorage.getItem("todo"));
+      if(!data){
+        data=[];
+      } 
+      return data;
     }
+
+    function renderData(){
+      const data = getData();
+      for(let item of data){
+        const td1 =tdSple.replace("@id", item.id)
+      .replace("@name", item.name)
+      .replace("@phone", item.phone)
+      .replace("@mail", item.mail); 
+
+        tableLi.insertAdjacentHTML("beforeend", td1);
+      }
+
+    }
+    renderData();
 </script>
-</html>
+</html> 
