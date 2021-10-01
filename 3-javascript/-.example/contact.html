@@ -82,6 +82,7 @@
 
       const td1 =
       ` <tr class ="text-center my-2">  
+          <td>
           <td >
               ${name.value}
           </td >
@@ -89,7 +90,7 @@
               ${phone.value}
           </td>
           <td>       
-                ${mail.value}
+              ${mail.value}
           </td>
           <td>       
             <button class="btn btn-secondary btn-primary btn-sm  text-nowrap remove">삭제</button> 
@@ -108,5 +109,13 @@
         td1.remove();
       }
     }
+
+      fetch("http://localhost:8080/contacts")
+      .then((res) =>res.json())
+      .then(data =>{
+        console.log(data)
+      })
+    
+    
 </script>
 </html>

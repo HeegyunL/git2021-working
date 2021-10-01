@@ -1,0 +1,17 @@
+클라우드 
+: 네트워크(인터넷)상의 가상의 자원을 제공하는 서비스
+
+Iaas(Infrastructure as a Service)
+-기반시설, Server, Network, Storage
+-AWS
+
+Paas(Platform as a Service)
+-개발플랫폼, 백엔드 개발플랫폼, java/node.js
+-Heroku
+
+Saas(Software as a Service)
+- 소프트웨어, 주로 기업용소프트웨어, 구글 드라이브, 네이버 마이박스
+- SalesForce.com, MS Office 365
+
+ssh -i "키파일 경로" 계정명@서버주소
+		ubuntu@ec2....

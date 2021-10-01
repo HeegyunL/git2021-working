@@ -7,25 +7,13 @@ const Navigation = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/components">Components</Link>
+        <Link to="/Todo">Todo</Link>
       </li>
       <li>
-        <Link to="/counter">Counter</Link>
+        <Link to="/FeedRe">FeedRe</Link>
       </li>
       <li>
-        <Link to="/calculator">Calculator</Link>
-      </li>
-      <li>
-        <Link to="/generator">Generator</Link>
-      </li>
-      <li>
-        <Link to="/account-manager">AccountManagerRef</Link>
-      </li>
-      <li>
-        <Link to="/bootstrap">BootStrap</Link>
-      </li>
-      <li>
-        <Link to="/Practice">Practice</Link>
+        <Link to="/Contact">Contact</Link>
       </li>
     </ul>
   );

@@ -4,12 +4,15 @@
 // css를 사용하는 컴포넌트 범위로 css class 사용범위를 좁힐 수 있음.
 
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
-import Home from "./components/Home";
-import Navigation from "./Navigation";
-import AccountManagerRef from "./components/AccountManagerRef";
+import Home from "./features/Home";
+import Profile from "./features/Profile/Profile";
+import Progress from "./components/progress/Progress";
+import AlertStack from "./components/alert/AlertStack";
 
 // SPA(Single Page Application)
 // : 페이지 파일이 1개, index.html
@@ -19,48 +22,72 @@ import AccountManagerRef from "./components/AccountManagerRef";
 
 // Lazy-Loading 처리
 // 컴포넌트를 방문하는 시점에 로딩함
-const Counter = lazy(() => import("./components/Counter"));
-const Calculator = lazy(() => import("./components/Calculator"));
-const Generator = lazy(() => import("./components/Generator"));
-const AccountManager = lazy(() => import("./components/AccountManagerRef"));
-const Components = lazy(() => import("./components/Components"));
-const BootStrap = lazy(() => import("./components/Bootstrap"));
-const Practice = lazy(() => import("./components/Practice"));
-// React == 컴포넌트 개발 라이브러리
+const Todo = lazy(() => import("./features/Todo/TodoInlineEdit"));
+const Feed = lazy(() => import("./features/Feed/Feed"));
+const Contact = lazy(() => import("./features/Contact/Contact"));
+const ContactCreate = lazy(() => import("./features/Contact/ContactCreate"));
+const ContactDetail = lazy(() => import("./features/Contact/ContactDetail"));
+const ContactEdit = lazy(() => import("./features/Contact/ContactEdit"));
+const Photo = lazy(() => import("./features/photo/Photo"));
+const PhotoCreate = lazy(() => import("./features/photo/PhotoCreate"));
+const PhotoDetail = lazy(() => import("./features/photo/PhotoDetail"));
+const PhotoEdit = lazy(() => import("./features/photo/PhotoEdit"));
+
+
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       {/* main container */}
-      <div style={{ width: "900px" }} className="mx-auto">
-        <nav
-          style={{ width: "200px", height: "100vh", top: "20px" }}
-          className="position-fixed"
-        >
-          <Navigation />
+      <div className="mx-auto">
+        <header className="app-bar d-flex justify-content-end bg-primary shadow">
+          <Profile />
+        </header>
+        <nav className="drawer-menu position-fixed bg-light shadow-sm">
+          <h3 className="ms-2">MY WORKSPACE</h3>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Todo">Todo</Link>
+            </li>
+            <li>
+              <Link to="/Feed">Feed</Link>
+            </li>
+            <li>
+              <Link to="/Contacts">Contact</Link>
+            </li>
+            <li>
+              <Link to="/Photos">Photos</Link>
+            </li>
+          </ul>
         </nav>
-        <main style={{ marginLeft: "200px", marginTop: "20px" }}>
-          {/* Suspense 컴포넌트로 로딩중에 보여줄 화면을 처리하는 것 */}
-          {/* fallback={로딩중에 보여줄 컴포넌트} */}
+        <main className="content-container">
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
-              {/* Switch 영역에 컴포넌트가 로딩됨 */}
-
-              {/* 해당 경로에 대해서 로딩할 컴포넌트 목록을 작성 */}
               <Route path="/" component={Home} exact />
-              <Route path="/components" component={Components} />
-              <Route path="/Practice" component={Practice} />
-              <Route path="/counter" component={Counter} />
-              <Route path="/calculator" component={Calculator} />
-              <Route path="/generator" component={Generator} />
-              <Route path="/account-manager" component={AccountManagerRef} />
-              <Route path="/bootstrap" component={BootStrap} />
+              <Route path="/Todo" component={Todo} />
+              <Route path="/Feed" component={Feed} />
+              <Route path="/Feed" component={Feed} />
+              <Route path="/Contacts" component={Contact} exact />
+              <Route path="/contacts/create" component={ContactCreate} />
+              <Route path="/contacts/detail/:id" component={ContactDetail} />
+              <Route path="/contacts/edit/:id" component={ContactEdit} />
+              <Route path="/photos" component={Photo} exact />
+              <Route path="/photos/create" component={PhotoCreate} />
+              <Route path="/photos/detail/:id" component={PhotoDetail} />
+              <Route path="/photos/edit/:id" component={PhotoEdit} />
             </Switch>
           </Suspense>
+
+          <Progress />
+          <AlertStack />
         </main>
       </div>
     </Router>
+    </Provider>
   );
 }
 
-// App.tsx 모듈의 기본 내보내기를 App 함수로 함
 export default App;
