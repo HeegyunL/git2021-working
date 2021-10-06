@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class CovidCountResponse {
+public class CovidSidoDailyResponse {
 	private Response response;
 	
 	@Data
@@ -31,9 +31,11 @@ public class CovidCountResponse {
 	@Data
 	public class Item {
 		private String stdDay;
-		private String updateDt;
 		private String gubun;
+		private String incDec;
 		private String defCnt;
+		private String overFlowCnt;
+		private String localOccCnt;
 	}
 	
 	
@@ -54,8 +56,8 @@ public class CovidCountResponse {
 		//	<createDt>2021-09-30 09:59:13.156</createDt>
 		//	<deathCnt>15</deathCnt>
 		//	<defCnt>6091</defCnt>
-		//	<gubun>°Ë¿ª</gubun>
-		//	<gubunCn>Ì°×îÏ¡</gubunCn>
+		//	<gubun>ê²€ì—­</gubun>
+		//	<gubunCn>éš”é›¢å€</gubunCn>
 		//	<gubunEn>Lazaretto</gubunEn>
 		//	<incDec>9</incDec>
 		//	<isolClearCnt>5844</isolClearCnt>
@@ -64,7 +66,7 @@ public class CovidCountResponse {
 		//	<overFlowCnt>9</overFlowCnt>
 		//	<qurRate>-</qurRate>
 		//	<seq>12416</seq>
-		//	<stdDay>2021³â 09¿ù 30ÀÏ 00½Ã</stdDay>
+		//	<stdDay>2021ë…„ 09ì›” 30ì¼ 00ì‹œ</stdDay>
 		//	<updateDt>null</updateDt>
 	//	</item>
 //	</items>

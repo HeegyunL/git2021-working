@@ -3,7 +3,7 @@ package com.git.myworkspace.Photo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-//photo Å×ÀÌºí¿¡ Á¢±ÙÇÏ´Â °´Ã¼
+//photo í…Œì´ë¸”ì— ì ‘ê·¼í•˜ëŠ” ê°ì²´
 @Repository
 public interface PhotoRepository extends JpaRepository<Photo, Long>{
 
