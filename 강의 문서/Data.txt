@@ -1,0 +1,5 @@
+state 제아함수를 자식 컴포넌트에 속성을 내림 props-down
+
+자식컴포넌트에서 이벤트가 발생하면 부모로 부터 받은 함수를 실행 ( event-up
+
+Data Down Action up

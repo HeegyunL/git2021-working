@@ -1,0 +1,28 @@
+CASE) 
+/데이터 갱신주기
+-1시간/1일 데이터 추가(수정/삭제)
+
+/클라이언트에서는 같은 데이터를 지속적으로 조회
+
+/일부 데이터를 좀더 빠른 공간에 저장 = 캐시(Cache)
+/데이터 갱신주기에 캐시를 삭제
+
+/캐시 데이터베이스를 사용
+- 일반 관계형 데이터 베이스 보다 좀 더 빠른
+- in-memory데이터 베이스
+- 좀 더 조회성능에 최적화된 데이터베이스
+
+/in-memory 데이터베이스
+-현재 데이터
+-최근 데이터
+-redis
+  : key-value 데이터 구조를 가짐
+  : 응답 성능을 최적화 할 때 많이 사용
+/document 데이터베이스
+- 이력 데이터
+-mongo-db
+
+
+https://github.com/patrikx3/redis-ui/releases/download/v2021.10.125/p3x-redis-ui-electron-setup-win-2021.10.125.exe
+= redis UI 설치
+

@@ -1,0 +1,24 @@
+1.add 할 때 localStorage 데이터를 추가
+로컬에서 가져온 후 추가
+getItem , setItem
+id는 가장 마지막에 추가한 데이터의 id+1
+tr태그에  id 데이터속성으로
+-data-속성, <tr data-i~~>
+2.remove할 때 localStorage에서 특정 데이터를 삭제
+로컬에서 가져온 후 삭제
+-setItem
+-filter
+-tr.dataset.id
+3.페이지 로딩할 때 locasStorage에서 데이터 가져오기
+-getitem
+-map, join
+
+.배열구조의 데이터를 setItem, getItem
+.배열번호, id값 같은 것들이 있어야함
+
+tr.dataset.id
+
+로컬스토리지를 객체구조로 제어
+1.로컬스토리지이세어 데이터를 가져오기 getItem -> JSON.parse
+2.데이터를 조작(배열, 객체)
+3.로컬스토리지이ㅔ 변경된 데이터를 저장 JSON.stringfy -> setItem

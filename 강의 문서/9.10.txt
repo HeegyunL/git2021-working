@@ -1,0 +1,73 @@
+동일한 필드, 메서드는 User에서 정의하고
+구현할 메서드는 추상메서드로 정의함
+---------------------------
+관리자 -Amdin
+멤머십사용자 -  Member
+ 
+클래스 설계자 (UML) -구조를 설계
+클래스 사용자 (user) - 생성해서 쓰는 사람
+클래스 확장해서 사용자(Extender) - 구조를 확생해서 구현하거나 추가하는 사람
+
+-> 기본적인건 그대로 쓰고, 세부적인건 규격에 맞게 구현해라
+
+상속을 쓰는 이유
+-> 있는 건 그대로 쓰고, 추가적인 추가하자, 재정의할건 재정의하고
+
+인터페이스 
+-> 규격에 맞게 개발해라!(마음대로 메서드 이름짓고, 매개변수 종류 정하지마라)
+-> 다형성 (기존코드를 수정하지 말고 다른 구현체를 만들어 써라)
+
+interface
+ - 중간 접점에 대한 규격(형식)
+- 서로 데이터를 주고받는 것이다.
+
+//오랫동안 유지보수가 가능한 소프트웨어를 만들자
+ 0 기능관점
+ 0 기능자체를 수정해야함  - 코드(메서드)
+ - 기존것을 지속적으로 고치자
+-기존것을 그대로 두고, 수정해야되는애는 새로 생성해서 쓰자\
+
+
+//interface - 디자인패턴과 물려있음
+
+Context(상황) - solution(해결책)
+- 상황마다 맞는 해결책을 규격해놓음 : design pattern
+
+1.설계(스펙)를 정의하고 그에 따라 구현한다.
+2.기존 구조에서 변경된것만 수정하고 기존 것은 놔둔다.
+3.일단 돌아가게하고 제대로 돌아가게는 나중에 한다.
+
+대부분 추상메서드 -> 인터페이스를 씀
+			-> 일부는 구현된게 있어 default 메서드
+
+대부분은 구현 메서드 - > 추상클래스를 씀
+			->일부는 추상메서드
+
+상속(interheritance) : 
+있는거를 갖다가 슴, 추가적인거 추가해, 재정의(extends)
+인터페이스(interface) : 
+설계한대로 만들어, 구현하고, 필요할 때 갈아껴(implements)
+
+Map -> HashMap, HashTable, TreeMap
+	: 내부적으로 구현되는 방식이 다른 자료구조들
+
+Map <- HashMap - (간단하게 넣고, 빼고, 삭제, 수정, 1건조회)
+      <- TreeMap - (정렬되서 목록조회, 앞에서부터 10건조회) 
+
+프론트엔드 : 
+-언어 : Typescript, SASS,  HTML5
+- 라이브러리 : React, Hooks, Redux, Redux-Saga, Redux-Toolkit
+-UI프레임워크 : Bootstrap 5
+-기본 환경구성 : CRA(create - react- app)
+- 배포 : Nginx, AWS EC2, AWS S3-Cloudfront(CDN)
+백엔드 : 
+- 언어 : Java
+- 프레임워크 : Spring Boot(웹-백엔드), Spring Data JPA(데이터베이스연동)
+- MSA : Spring Cloud
+ 	-Spring Cloud Gateway : API Gateway
+	-Eureka : Service Registry
+	-Ribbon : Client-Side Loadbalancing
+- 데이터베이스 : MySQL(메인), Redis(캐시, 세션) 
+- 미들웨어 : Kafka(이벤트스트리밍 ,MQ)m RabbitMQ(AMQP)
+- 외부시스템 : 공공데이터포털, 카카오인증시스템(OAuth2)
+- 배포 : Jenkins(통합배포 ) ,  AWS API Gateway

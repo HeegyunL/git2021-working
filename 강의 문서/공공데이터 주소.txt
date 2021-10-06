@@ -1,0 +1,7 @@
+대기오염
+http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureSidoLIst?sidoName=서울&searchCondition=HOUR&pageNo=1&numOfRows=25&returnType=xml&serviceKey=Ev3%2FzqFtlqN%2BzmGpmkNJHdIBga81m1Pbk5ZBWjDuy71cyySLvKaetXQzHjqAijSDSNYxuPazSYHvBFPd2Z6VWw%3D%3D
+
+코로나
+http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Ev3%2FzqFtlqN%2BzmGpmkNJHdIBga81m1Pbk5ZBWjDuy71cyySLvKaetXQzHjqAijSDSNYxuPazSYHvBFPd2Z6VWw%3D%3D
+
+http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Ev3%2FzqFtlqN%2BzmGpmkNJHdIBga81m1Pbk5ZBWjDuy71cyySLvKaetXQzHjqAijSDSNYxuPazSYHvBFPd2Z6VWw%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20200410&endCreateDt=20200410

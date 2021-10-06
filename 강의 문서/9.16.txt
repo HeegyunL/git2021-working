@@ -1,0 +1,13 @@
+//백엔드에서 응답 데이터를 줄 때
+marshalling : 프로그램객체(메모리)구조에서 -> 데이터전송용구조
+: java object -> JSON String
+
+
+HTTP Response Body
+
+// 프론트엔드에서 응답 데이터를 받을 때
+un-marshalling : 데이터전송용구조 ->프로그램객체구조
+:JSON String -> Javascript Object(Array)
+
+photos와 contact 컨셉은 본인이 관리하는 사진과 연락처
+ - 게시판처럼 다른사람들이 보는게 아님

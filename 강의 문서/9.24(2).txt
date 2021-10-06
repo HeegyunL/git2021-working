@@ -1,0 +1,8 @@
+jdbc:postgresql://database-1.cgp5lxuznsxk.ap-northeast-2.rds.amazonaws.com:5432/postgres
+Daekeun Ko님이 모두에게:  12:24 PM
+/postgres?currentSchema=myworkspace
+Daekeun Ko님이 모두에게:  02:48 PM
+runtimeOnly 'mysql:mysql-connector-java'
+Daekeun Ko님이 모두에게:  03:10 PM
+jdbc:mysql://database-3.cgp5lxuznsxk.ap-northeast-2.rds.amazonaws.com:3306/myworkspace
+driver-class-name: com.mysql.cj.jdbc.Driver #mysql

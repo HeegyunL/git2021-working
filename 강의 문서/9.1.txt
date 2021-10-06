@@ -1,0 +1,18 @@
+커뮤니티 - 사용자간 데이터 공유
+개인화 - todo, contact,photo
+
+array : 	추가 push()
+	목록 sort((a,b) a.id - b.id)
+	      find() 특정이 나올때 까지
+
+	추가 unshift() 재정렬이 모두 일어남
+	목록 arr
+
+Map : 	추가 set(index, {})
+	목록 sort((a,b) a.id - b.id)
+
+연락처관리 - 목록, 추가, 상세, 수정 4개화면과
+ redux와 router param를 이용하는 과제
+
+연락처관리에 입력 데이터: 이름, 전화번호, 이메일, 메모(textarea)
+목록화면은 테이블로 보여주면 됨

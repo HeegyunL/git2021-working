@@ -1,0 +1,17 @@
+* API : Application Programming Interface(=징검다리)
+ = 프로그램 개발을 위한 인터페이스
+
+*DOM API를 자바스크립트로 제어
+
+*x -> api ->x 
+api로 x를 제어
+
+*HTML - DOM -DOM API - JAVASCRIPT
+ *객체화 = > 메모리안에 구조화된 형식으로 넣는다.
+
+트리(tree) " 상/하위 계층 구조
+-최상단이 root (뿌리. 최상위 부모)
+-최하단이 leaf(잎)
+-각 하나의 항목을 노드(node, 단말)
+
+*for-of : 배열, iterable(반복탐색가능한 객체)

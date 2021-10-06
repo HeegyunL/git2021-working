@@ -1,0 +1,19 @@
+contact 수정/삭제 REST API 만들고 테스트코드 완성
+클래스 다이어그램 만들고, 수정/삭제 stub 메서드 생성
+test코드 작성하고 컨트롤러에 메서드 구현
+삭제는 TDD스타일로 stub메서드 -> 테스트케이스 작성 -> 구현 -> 테스트케이스 수행
+수정은 고전스타일로 stub메서드 -> 구현 -> 테스트케이스작성 -> 테스트케이스 수행
+ 1. ClassDiagram 작성
+ - Contact 및 ContactController
+ - 삭제 및 수정 메서드를 포함하여 작성
+
+2. ContactController에 수정, 삭제 메서드 작성
+
+3. TestContactController에 테스트 코드 작성
+ - 연락처 추가, 연락처 삭제
+
+4. ContactController에 삭제 및 수정 메서드 구현
+ - 404, 404 등 예외처리 할 것
+
+5. TestContactController에 테스트 코드 작성
+ - 연락처 수정

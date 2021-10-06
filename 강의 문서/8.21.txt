@@ -1,0 +1,29 @@
+stateful component
+- 상대관리 필요한 컴포넌트
+-내부에 state로 특정시점에 다시 렌더링
+-class component로 작성
+
+stateless component
+-상대관리 필요하지 않은 컴포넌트
+- prop만 받아서 렌더링 하는것
+- function component로 작성
+-상태관리, 라이프사이클처리 안됨
+
+
+React 컴포넌트 라이브러리 
+-> 컴포넌트는 JSX를 반환하는 함수
+prop : 컴포넌트에서 받는 매개변수 렌더링
+<..prop1 ={var1}
+state : 컴포넌트 내부에서 관리하는 변수 렌더링에 변화
+-> state 변경함수로만 제어가 가능함
+
+React 컴포넌트가 재렌더링 되는 케이스
+ - state가 변경됐을 때 
+-  props 변경됐을때
+- 부모 컴포넌트가 다시 렌더링될 때
+  App> generator > ListItem
+   	state 변경
+	-> re-render ->
+-키 속성이 변경 됏을 때
+prop, state 그대로인데 다시 렌더링 해야함
+  키속성의 값을 바꿔야 함

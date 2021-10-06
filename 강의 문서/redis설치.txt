@@ -1,0 +1,12 @@
+redis 설치
+
+https://github.com/microsoftarchive/redis/releases
+
+Redis-x64-3.2.100.msi다운
+add 추가 해서 설치
+set the memory limit = 100
+
+커맨드창 에서 redis-cli = 설치확인
+
+https://github.com/patrikx3/redis-ui/releases/download/v2021.10.125/p3x-redis-ui-electron-setup-win-2021.10.125.exe
+= redis UI 설치

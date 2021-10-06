@@ -1,0 +1,9 @@
+.flexbox 기본 옵션 잘 알아야함
+- > flex item에 flexbox 옵션먹는 거임
+
+.item의 정렬, 공간배분 -> 배치
+->주축 (justify-content)정렬
+->교차축(align-item)정렬
+->늘리기(flex-grow)공간배분
+->줄이기(flex-shrink)공간배분
+->flex-wrap, flex-direction -> flex-flow

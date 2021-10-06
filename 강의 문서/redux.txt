@@ -1,0 +1,37 @@
+https://facebook.github.io/flux/
+https://haruair.github.io/flux/docs/overview.html#content
+
+
+state 변경정보 = action 
+pay-load = 데이터?
+type = 종류
+Flux : 클라이언트 사이트 데이터 관리 아키텍처(큰규모 구조)
+				디자인(작은규모 구조)
+		-> 추상적인, 이론적인, 원리적인
+
+		->view는 Stroe를 변경
+		-> view에서 action 객체 dispatcher넘기면
+		dispatcher가 store를 변경
+
+
+redux : flux 패턴을 라이브러리(js/ts)만들어 놓은 것
+ -> ActionCreater  = 액션 객체를 생성하는 함수
+ -> action creater = Action = 액션 타입(명령), 데이터(매개변수)
+ -> dispatcher = 액션타입과 페이로드를 받아서 리듀서를 실행
+ -> Reducer : 기존 state와 액션의 페이로드로 state를 변경
+
+react-redux : react에서 redux를 쓸 수 있게 만들어 놓은 것
+
+https://redux-toolkit.js.org/tutorials/quick-start
+
+switch(action.type){
+case : "profile/saveProfile":
+const profile = action.payload;
+return {image : profile.
+
+
+
+
+
+
+

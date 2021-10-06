@@ -1,0 +1,50 @@
+//숫자형
+정수(소숫점이 없는 것)
+ -byte
+   8비트 , 256개, 2를 8번 제곱함,2^8
+   -128~0~127
+   1바이트
+  -char(문자)
+  A,B,C
+   2바이트
+  int (4byte)
+  -21억
+  long (8byte)
+
+실수(소숫점이 있는것)
+  -float, double( 좀 더 많이 사용)
+
+
+2항 = 
+-산술
+-비교
+-논리
+
+NaN, Infinity = 자바에서는 에러
+
+nested-if, nested-condition
+
+for-of , for-in, forEach, map, filter
+ : array , object
+
+advanced-for expression
+: array, collection(js-array, js-Map)
+
+for(int num : numArr){
+}
+
+*자바에서 문자열은 참조타입이다!
+
+//자바
+1.문자열
+String str1 = new String("....");
+String str2 = new String("....");
+-> 자바에서 문자열은 참조 객체
+-> 문자열 비교시에는 항상 str1.equals(str2);
+
+2.배열
+배열타입 [] 변수명 = {...값 목록}
+배열타입[] 변수명 = new 배열타입[크기];
+->자바에서 배열은 고정크기임
+->새로운 항목을 추가하거나 삭제하는 것이 불가능함
+->기존 항목의 값을 변경하거나 0/false 또는 null초기화만 가능함

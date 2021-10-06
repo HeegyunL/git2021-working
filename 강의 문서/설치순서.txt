@@ -1,0 +1,36 @@
+1. node.js 설치
+https://nodejs.org/ko/
+
+2. typescript 개발환경 설치
+npm install -g typescript
+npm install -g ts-node
+npm install -g @types/node
+
+3. code runner extension 설치
+VSC 설치
+
+-- Bootstrap 사용
+1. 설치
+npm install bootstrap @popperjs/core
+npm install node-sass
+
+-- React Router 기초
+npm install react-router-dom
+npm install @types/react-router-dom
+
+-- Redux 환경구성 및 초기 셋업 ---------------------------------
+1. redux 및 redux-tookit 라이브러리 설치
+npm install @reduxjs/toolkit react-redux
+
+  // 기본 셋업
+  npm install redux-saga
+
+gradlew bootJar - 실행파일만 생성함
+(시스템 환경변수편집 - 시스템속성 - 고급-환경변수 - JAVA_HOME - 가장 뒤에 \jre라고 붙임)
+
+https://github.com/patrikx3/redis-ui/releases/download/v2021.10.125/p3x-redis-ui-electron-setup-win-2021.10.125.exe
+= redis UI 설치
+
+
+
+
