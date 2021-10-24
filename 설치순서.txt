@@ -1,0 +1,103 @@
+1. node.js 설치
+https://nodejs.org/ko/
+
+//jdk 설치
+https://www.oracle.com/java/technologies/downloads/#java16-mac
+
+2. typescript 개발환경 설치
+npm install -g typescript
+npm install -g ts-node
+npm install -g @types/node
+
+3. code runner extension 설치
+VSC 설치
+
+-- Bootstrap 사용
+1. 설치
+npm install bootstrap @popperjs/core
+npm install node-sass
+
+-- React Router 기초
+npm install react-router-dom
+npm install @types/react-router-dom
+
+-- Redux 환경구성 및 초기 셋업 ---------------------------------
+1. redux 및 redux-tookit 라이브러리 설치
+npm install @reduxjs/toolkit react-redux
+
+  // 기본 셋업
+  npm install redux-saga
+
+//STS설치
+google - STS4검색 ->  xxx.jar 파일을 xxxx.zip로 바꿈 -> zip파일에서 content.zip을 바탕화면으로 꺼내기
+-> sts4.11.1RELEASE파일을 c/d드라이브에 넣기(경로에 한글이 섞이면 오류가 생길수 있음) -> 바탕화면에 실행파일 복붙 
+-> 5-java로 workspace 설정 , use this as the default 체크 -> 
+java = javaSE-11 , 
+
+//spring설정
+(시스템 환경변수편집 - 시스템속성 - 고급-환경변수 - path -> 새로만들기 -> 변수이름 = JAVA_HOME / 변수값 = sts-4.11.1의 파일에 jre까지의 경로
+* cmd 에서 echo %JAVA_HOME% 을 입력해서 경로가 맞나확인
+
+구글에서 lombok project라고 검색 -> 다운로드 -> 롬복을받은 곳에서 cmd를 열어 java -jar lombok.jar라고 입력
+-> sts파일만 체크 -> install/update ->  
+
+롬복 테스트 
+맥북은 ~/.bash_profile -> sudo vi .bash_profile 
+export PATH=/sts의 jre경로/bin:$PATH
+export JAVA_HOME=/sts의 jre경로
+
+~$ java --version 
+	echo $JAVA_HOME 로 확인해보기 
+
+//포스트맨 설치
+
+// Jacoco gradle 플러그인으로 환경구성
+1. build.gralde 파일 수정
+plugins {
+	// 추가
+	// 커버리지 리포트용 플러그인
+	id 'jacoco'	
+}
+
+
+test {
+	// 추가
+	// report is always generated after tests run
+	finalizedBy jacocoTestReport 
+}
+
+// 추가
+jacocoTestReport {
+    // tests are required to run before generating the report
+    dependsOn test 
+
+}
+
+2. build.gradle 우클릭 > Gradle > Refresh Gradle Project
+
+3. lombok.config를 프로젝트 root에 생성
+lombok.addLombokGeneratedAnnotation = true
+
+4. Window > Show View > Other > Gradle > Gradle Tasks 추가
+
+5. Gradle Tasks > verification > test
+
+6. 프로젝트폴더 > build > reports > jacoco > test > html
+   - index.html 테스트 커버리지 리포트 보일 것임
+
+//dbeaver 다운
+-
+
+gradlew bootJar - 실행파일만 생성함
+
+
+https://github.com/patrikx3/redis-ui/releases/download/v2021.10.125/p3x-redis-ui-electron-setup-win-2021.10.125.exe
+= redis UI 설치
+
+차트 설정
+npm install --save react-apexcharts apexcharts
+
+visual paradigm설치, 사용법,
+
+
+

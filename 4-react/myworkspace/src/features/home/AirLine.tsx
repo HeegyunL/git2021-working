@@ -26,7 +26,7 @@ const AirLine = () => {
         pm25Value: number;
       }[]
     >(
-      `${process.env.REACT_APP_API_BASE}/opendata/air/sido/current/${cityRef.current?.value}`
+      `${"http://localhost:8080"}/opendata/air/sido/current/${cityRef.current?.value}`
     );
 
     const data = result.data;
@@ -82,7 +82,9 @@ const AirLine = () => {
               {barData
                 .map((item) => item.cityName)
                 .map((city) => (
-                  <option value={city}>{city}</option>
+                  <option key={`sel-${city}`} value={city}>
+                    {city}
+                  </option>
                 ))}
             </select>
           </div>

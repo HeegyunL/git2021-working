@@ -1,3 +1,4 @@
+#!/bin/sh
 @rem ===== 1. 빌드된 jar파일을 서버에 전송
 scp -i "c:/keys/myworkspace.pem" -r C:/git2021-master/git2021-master/6-spring/myworkspace/myworkspace/build/libs/*.jar ubuntu@ec2-13-125-231-210.ap-northeast-2.compute.amazonaws.com:/home/ubuntu/app/myworkspace
 @rem ===== 2. jar파일을 실행하는 run.sh 스크립트 파일을 서버에 전송

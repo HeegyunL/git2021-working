@@ -6,16 +6,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AirSigunguHourId implements Serializable{
+public class AirSigunguHourId implements Serializable {
 
-	private static final long serialVersionID= 1L;
-	
+	private static final long serialVersionID = 1L;
+
 	private String dataTime;
 	private String sidoName;
 	private String cityName;
-	
+
 }

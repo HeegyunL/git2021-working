@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CovidController {
 	private CovidSidoDailyRepository repo;
 	private final String cachName = "covid-current";
-	
+
 	@Autowired
 	public CovidController(CovidSidoDailyRepository repo) {
 		this.repo = repo;
@@ -28,19 +28,19 @@ public class CovidController {
 	//page size(limit)를 19개 , 정렬은 stdDay desc;
 	@Cacheable(value = cachName, key="'all'")
 	@GetMapping(value="/sido/current")
-	public List<CovidSidoDaily> getCovidCurrent(){ 
+	public List<CovidSidoDaily> getCovidCurrent(){
 		return repo.findAll(PageRequest.of(0, 19,Sort.by("stdDay").descending())).toList();
-		
+
 	}
-	
+
 	//2.특정 시도의 데이터 조회
-	//검색조건에 gubun, page size(limit)를 7, 정렬은 stdDay desc
+	//검색조건에 gubun, page size(limit)를 7(7일간의 데이터), 정렬은 stdDay desc
 	//예)WHERE gubun = 서울 ORDER BY std_day DESC LIMIT 7;
-	
+
 	@Cacheable(value=cachName, key="#gubun")
 	@GetMapping(value = "/sido/current/{gubun}")
 	public List<CovidSidoDaily> getCovidCurrent(@PathVariable String gubun){
-		Pageable page = PageRequest.of(0, 19,Sort.by("stdDay").descending());
+		Pageable page = PageRequest.of(0, 14,Sort.by("stdDay").descending());
 		return repo.findByGubun(page, gubun);
 	}
 }

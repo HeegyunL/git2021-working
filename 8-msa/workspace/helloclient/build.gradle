@@ -1,0 +1,46 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.git'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+<<<<<<< HEAD
+	//rabbitmq
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	//embeded tomcat
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//live server(ì½”ë“œ ê³ ì¹˜ë©´ ìž¬ì‹œìž‘)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//junit test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//rabbitmq test
+=======
+	//rabbitMq
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'	
+	
+	//embeded tomcat
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	//live server(ÄÚµå °íÄ¡¸é Àç½ÃÀÛ)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	//Junit test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	//rabbitMq test
+>>>>>>> 964e2b4f224d5cfb112bc7a3f1938e85031788fa
+	testImplementation 'org.springframework.amqp:spring-rabbit-test'
+}
+
+test {
+	useJUnitPlatform()
+}

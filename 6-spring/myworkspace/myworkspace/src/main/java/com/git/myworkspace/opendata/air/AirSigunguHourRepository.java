@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AirSigunguHourRepository extends JpaRepository<AirSigunguHour, Long>{
-	
+
 	//findBy 필드명
 	//필드명은 Pascal-case로 대소문자 잘 맞추어야함
 	//예)필드명 ciryName

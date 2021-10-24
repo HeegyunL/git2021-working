@@ -24,12 +24,12 @@ import com.git.myworkspace.lib.TextProcesser;
 @RestController
 public class ContactController {
 	private ContactRepository repo;
-	
+
 	@Autowired
 	public ContactController(ContactRepository repo) {
 		this.repo = repo;
 	}
-	
+
 	@GetMapping(value = "/contacts")
 	public List<Contact> getContacts() throws InterruptedException{
 
@@ -39,39 +39,31 @@ public class ContactController {
 	public Page<Contact> getContactPaging(@RequestParam int page, @RequestParam int size){
 		return repo.findAll(PageRequest.of(page, size,Sort.by("id").descending()));
 	}
-	
+
 	@PostMapping(value = "/contacts")
 	public Contact addContact(@RequestBody Contact contact, HttpServletResponse res)
 			throws InterruptedException{
-	
-		
-		if(TextProcesser.isEmpyText(contact.getName())) {
+
+
+		if(TextProcesser.isEmpyText(contact.getName()) || TextProcesser.isEmpyText(contact.getPhone()) || TextProcesser.isEmpyText(contact.getMail())) {
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return null;
 		}
-		if(TextProcesser.isEmpyText(contact.getPhone())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-		if(TextProcesser.isEmpyText(contact.getMail())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-	
+
 		Contact contactItem = Contact.builder()
 							.name(contact.getName())
-							.phone(contact.getPhone()) 
+							.phone(contact.getPhone())
 							.mail(contact.getMail())
 							.memo(contact.getMemo())
 							.createdTime(new Date().getTime())
 							.build();
 		Contact ContactSaved = repo.save(contactItem);
-		
+
 		res.setStatus(HttpServletResponse.SC_CREATED);
 		return ContactSaved;
 	}
-	
-//	»èÁ¦
+
+//	ï¿½ï¿½ï¿½ï¿½
 	@DeleteMapping(value="/contacts/{id}")
 	public boolean removeContact(@PathVariable long id, HttpServletResponse res) {
 		Optional<Contact> contact = repo.findById(id);
@@ -79,44 +71,36 @@ public class ContactController {
 			res.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return false;
 		}
-			
+
 		repo.deleteById(id);
-		
+
 		return true;
-		
+
 	}
 	@PutMapping(value="/contacts/{id}")
-	public Contact modifyContact(@PathVariable  long id, @RequestBody Contact contact, 
+	public Contact modifyContact(@PathVariable  long id, @RequestBody Contact contact,
 			HttpServletResponse res) {
 		Optional<Contact> contactItem = repo.findById(id);
 		if(contactItem.isEmpty()) {
 			res.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return null;
 		}
-		if(TextProcesser.isEmpyText(contact.getName())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-		if(TextProcesser.isEmpyText(contact.getPhone())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-		if(TextProcesser.isEmpyText(contact.getMail())) {
+		if(TextProcesser.isEmpyText(contact.getName()) || TextProcesser.isEmpyText(contact.getPhone()) || TextProcesser.isEmpyText(contact.getMail())) {
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return null;
 		}
 		Contact contactToSave = contactItem.get();
-		
+
 		contactToSave.setName(contact.getName());
 		contactToSave.setPhone(contact.getPhone());
 		contactToSave.setMail(contact.getMail());
 		contactToSave.setMemo(contact.getMemo());
-		
+
 		Contact contactSaved = repo.save(contactToSave);
-		
+
 		return contactSaved;
 	}
-	
-	
+
+
 
 }

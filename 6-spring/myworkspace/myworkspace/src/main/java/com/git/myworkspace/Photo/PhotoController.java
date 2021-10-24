@@ -60,13 +60,8 @@ public class PhotoController {
 	@PostMapping(value = "/photos")
 	public Photo addPhoto(@RequestBody Photo photo, HttpServletResponse res) throws InterruptedException {
 		// 타이틀이 빈값
-		if (TextProcesser.isEmpyText(photo.getTitle())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-
 		// 파일URL이 빈값
-		if (TextProcesser.isEmpyText(photo.getPhotoUrl())) {
+		if (TextProcesser.isEmpyText(photo.getTitle()) || TextProcesser.isEmpyText(photo.getPhotoUrl())) {
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return null;
 		}
@@ -121,13 +116,8 @@ public class PhotoController {
 		}
 
 		// 타이틀이 빈값
-		if (TextProcesser.isEmpyText(photo.getTitle())) {
-			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			return null;
-		}
-
 		// 파일URL이 빈값
-		if (TextProcesser.isEmpyText(photo.getPhotoUrl())) {
+		if (TextProcesser.isEmpyText(photo.getTitle()) || TextProcesser.isEmpyText(photo.getPhotoUrl())) {
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return null;
 		}

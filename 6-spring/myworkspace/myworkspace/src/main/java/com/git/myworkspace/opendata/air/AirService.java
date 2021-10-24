@@ -34,7 +34,7 @@ public class AirService {
 	// 시군구별 대기질 시간단위 조회
 
 	// 정각 2시간마다 실행
-//	@Scheduled(cron = "0 0 */2 * * *")	
+//	@Scheduled(cron = "0 0 */2 * * *")
 
 	// 매시 30분에 실행, 1시 30분, 2시 30분
 	// 그 시간이 되어야만 실행됨
@@ -103,7 +103,7 @@ public class AirService {
 		/* ---------------------- XML -> JSON -> Object(Java) 끝 ----------------- */
 
 		/* ---------------------- 응답 객체 -> 엔티티 시작 ----------------- */
-		List<AirSigunguHour> list = new ArrayList<AirSigunguHour>();
+		List<AirSigunguHour> list = new ArrayList<>();
 		for (AirSigunguHourResponse.Item item : response.getResponse().getBody().getItems().getItem()) {
 			AirSigunguHour record = AirSigunguHour.builder().dataTime(item.getDataTime()).sidoName(item.getSidoName())
 					.cityName(item.getCityName())

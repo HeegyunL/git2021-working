@@ -21,7 +21,7 @@ const AirBar = () => {
         pm10Value: number;
         pm25Value: number;
       }[]
-    >(`${process.env.REACT_APP_API_BASE}/opendata/air/sido/current`);
+    >(`${"http://localhost:8080"}/opendata/air/sido/current`);
 
     const data = result.data;
 
@@ -43,8 +43,8 @@ const AirBar = () => {
           ({ value, seriesIndex }: { value: number; seriesIndex: number }) => {
             // seriesIndex: 0, PM10
             // seriesIndex: 1, PM2.5
-            console.log(value);
-            console.log(seriesIndex);
+            // console.log(value);
+            // console.log(seriesIndex);
 
             let color = "";
 
@@ -56,7 +56,7 @@ const AirBar = () => {
               else color = "rgb(255, 89, 89)";
             } else {
               // PM2.5일 때
-              if (value <= 15) color = "rgb(255, 161, 255)";
+              if (value <= 15) color = "rgb(50, 161, 255)";
               else if (value > 15 && value <= 35) color = "rgb(0, 199, 60)";
               else if (value > 35 && value <= 75) color = "rgb(253, 155, 90)";
               else color = "rgb(255, 89, 89)";

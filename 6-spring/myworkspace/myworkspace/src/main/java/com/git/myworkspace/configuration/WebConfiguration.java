@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
-	
+
 	// CORS(cross origin resource sharing) 정책을 설정
     @Override
     public void addCorsMappings(CorsRegistry registry) {
@@ -18,7 +18,7 @@ public class WebConfiguration implements WebMvcConfigurer {
         	// html문서에는 어디서 문서를 받아왔는지를 기록하고 있음
         	// 실제 통신은 브라우저 -> 서버
         	.allowedOrigins(
-        			"http://localhost:3000", 
+        			"http://localhost:3000",
         			"http://127.0.0.1:5500/",
         			"http://ec2-13-125-231-210.ap-northeast-2.compute.amazonaws.com")
         	// 공유정책으로 허용할 HTTP메서드

@@ -25,24 +25,24 @@ export interface ContactItemResponse{
 
   const contactApi ={
     fetch : ()=>
-    axios.get<ContactItemResponse[]>(`${process.env.REACT_APP_API_BASE}/contacts`),
+    axios.get<ContactItemResponse[]>(`${"http://localhost:8080"}/contacts`),
 
     fetchPaging:(page:number,size:number)=>
     axios.get<ContactPagingReponse>(
-      `${process.env.React_APP_API_BASE}/contacts/paging?page=${page}&size=${size}`
+      `${"http://localhost:8080"}/contacts/paging?page=${page}&size=${size}`
     ),
     add:(contactItem : ContactItemRequest)=>
     axios.post<ContactItemResponse>(
-      `${process.env.REACT_APP_API_BASE}/contacts`,
+      `${"http://localhost:8080"}/contacts`,
       contactItem
     ),
 
     remove:(id:number) =>
-    axios.delete<boolean>(`${process.env.REACT_APP_API_BASE}/contacts/${id}`),
+    axios.delete<boolean>(`${"http://localhost:8080"}/contacts/${id}`),
 
     modify:(id:number, contactItem : ContactItemRequest) =>
     axios.put<ContactItemResponse>(
-      `${process.env.REACT_APP_API_BASE}/contacts/${id}`,
+      `${"http://localhost:8080"}/contacts/${id}`,
       contactItem
     )
   

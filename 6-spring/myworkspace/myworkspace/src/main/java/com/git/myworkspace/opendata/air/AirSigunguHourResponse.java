@@ -1,6 +1,5 @@
 package com.git.myworkspace.opendata.air;
 
-
 import java.util.List;
 
 import lombok.Data;

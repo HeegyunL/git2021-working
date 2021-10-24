@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CovidSidoDailyRepository extends JpaRepository<CovidSidoDaily, Long>{
-	
+
 	List<CovidSidoDaily> findByGubun(Pageable page, String gubun);
-	
+
 }

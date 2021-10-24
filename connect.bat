@@ -1,1 +1,0 @@
-ssh -i "C:\git2021-master\git2021-master\myworkspace.pem" ubuntu@ec2-13-125-231-210.ap-northeast-2.compute.amazonaws.com

@@ -1,7 +1,5 @@
 package com.git.myworkspace.Photo;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-// Spring Data JPA(Java Persistence API, 자바 영속화 API)  
+// Spring Data JPA(Java Persistence API, 자바 영속화 API)
 // 영속화: 휘발성 데이터 -> 비휘발성 장치
 //           자바 객체(RAM) -> 테이블 레코드(파일내부의 특정값)
 

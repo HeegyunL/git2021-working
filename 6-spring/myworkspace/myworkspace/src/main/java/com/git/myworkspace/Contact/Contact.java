@@ -11,10 +11,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Entity
 public class Contact {
 	@Id

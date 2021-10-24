@@ -78,6 +78,7 @@ const PhotoEdit = () => {
   };
 
   return (
+    
     <div style={{ width: "40vw" }} className="mx-auto">
       <h2 className="text-center">Photo Edit</h2>
       <form>
@@ -120,7 +121,7 @@ const PhotoEdit = () => {
                 />
               </td>
             </tr>
-          </tbody>
+          </tbody >
         </table>
       </form>
       <div>

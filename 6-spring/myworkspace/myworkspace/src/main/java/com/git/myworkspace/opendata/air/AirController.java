@@ -2,7 +2,6 @@ package com.git.myworkspace.opendata.air;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
@@ -20,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AirController {
 	private AirSigunguHourRepository repo;
 	private final String cachName= "air-current";
-	
+
 	@Autowired
 	public AirController(AirSigunguHourRepository repo) {
 		this.repo = repo;
 	}
-	
+
 	// 최근 25개의 데이터를 조회
 	// 예) 25개 구", "");의 가장 최근 시간의 데이터
 
@@ -36,7 +35,7 @@ public class AirController {
 	public List<AirSigunguHour> getAirCurrent(){
 		return repo.findAll(PageRequest.of(0, 25,Sort.by("dataTime").descending())).toList();
 	}
-	
+
 
 	// 특정 구", "");의 최근 12개의 데이터를 조회
 	// 예) 강남구", "");, 최근 12개(12시간)의 데이터
@@ -50,6 +49,6 @@ public class AirController {
 		Pageable page =PageRequest.of(0, 12,Sort.by("dataTime").descending());
 		return repo.findByCityName(page, city);
 	}
-	
-	
+
+
 }

@@ -17,20 +17,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(indexes = @Index(name="idex_covid_sido_daily_1",columnList ="gubun, stdDay"))
+@Table(indexes = @Index(name = "idex_covid_sido_daily_1", columnList = "gubun, stdDay"))
 @IdClass(CovidSidoDailyId.class)
 public class CovidSidoDaily {
-	
+
 	@Id
 	private String stdDay;
 	@Id
 	@Column(columnDefinition = "varchar(255) collate \"ko_KR.utf8\"")
 	private String gubun;
-	
+
 	private String incDec;
 	private String defCnt;
 	private Integer overFlowCnt;
 	private Integer localOccCnt;
-	
 
 }
