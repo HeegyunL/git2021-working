@@ -1,6 +1,7 @@
 package com.git.file;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
@@ -11,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
+
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
 
 @RestController
 public class FileController {
@@ -36,33 +39,39 @@ public class FileController {
         //2. 객체 key 생성
         //S3에서는 파일 경로 key
         //예)20211022/images/penguin.jpg
-        String objectkey = getObjectKey(file.getOriginalFilename());
+        String objectKey = getObjectKey(file.getOriginalFilename());
 
         //3.put 요청 객체 생성, public -read
         PutObjectRequest req = new PutObjectRequest(
                 BUCKET_NAME,
-                objectkey,
+                objectKey,
                 file.getInputStream(),
                 metadata
-        );
+        ).withCannedAcl(CannedAccessControlList.PublicRead);
+
+        //4. 객체 업로드
         PutObjectResult result = client.putObject(req);
-        System.out.println(result);
-        return DISTRIBUTION_URL + objectkey;
+        System.out.println(result.getETag());
+        return DISTRIBUTION_URL + objectKey;
     }
 
     @DeleteMapping("/files/{objectKey}")
-    public void deletefile(@PathVariable String objcetKey, HttpServletResponse res) {
-        if (!client.doesObjectExist(BUCKET_NAME, objcetKey)) {
+    public void deleteFile(@PathVariable String objectKey, HttpServletResponse res) {
+        if (!client.doesObjectExist(BUCKET_NAME, objectKey)) {
             res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
-        client.deleteBucket();
+        client.deleteObject(BUCKET_NAME, objectKey);
+        System.out.println("--deleted--");
+    }
 
-        private String getObjectKey (String filename){
-            String secret = "git2021";
-            long timestamp = new Date().getTime();
+    //OTP(One Time Password) : secret + unique + time
+    //object key 해시 생성
+    private String getObjectKey(String filename) {
+        String secret = "git2021";
+        long timestamp = new Date().getTime();
 
-            return org.apache.commons.codec.digest.DigestUtils.sha256Hex(secret + filename + timestamp);
-        }
+        return sha256Hex(secret + filename + timestamp);
     }
 }
+
