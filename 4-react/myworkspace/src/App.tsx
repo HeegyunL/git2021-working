@@ -13,7 +13,7 @@ import Home from "./features/home/iframe";
 import Profile from "./features/Profile/Profile";
 import Progress from "./components/progress/Progress";
 import AlertStack from "./components/alert/AlertStack";
-import EventMessage from "./components/EventMessage";
+import EventMessage from "./components/EventMessger";
 
 // SPA(Single Page Application)
 // : 페이지 파일이 1개, index.html
@@ -33,7 +33,7 @@ const Photo = lazy(() => import("./features/photo/Photo"));
 const PhotoCreate = lazy(() => import("./features/photo/PhotoCreate"));
 const PhotoDetail = lazy(() => import("./features/photo/PhotoDetail"));
 const PhotoEdit = lazy(() => import("./features/photo/PhotoEdit"));
-
+const Calendar = lazy(() => import("./features/calendar/Calendar"));
 
 function App() {
   return (
@@ -62,6 +62,9 @@ function App() {
             <li>
               <Link to="/Photos">Photos</Link>
             </li>
+            <li>
+              <Link to="/calendar">calendar</Link>
+            </li>
           </ul>
         </nav>
         <main className="content-container">
@@ -79,6 +82,7 @@ function App() {
               <Route path="/photos/create" component={PhotoCreate} />
               <Route path="/photos/detail/:id" component={PhotoDetail} />
               <Route path="/photos/edit/:id" component={PhotoEdit} />
+              <Route path="/calendar" component={Calendar} />
             </Switch>
           </Suspense>
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -39,16 +38,4 @@ const EventMessage = () => {
   return <></>;
 };
 
-=======
-
-const EventMessage = () => {
-const eventUrl = `http://localhost:9090/event`;
-const eventSource = new EventSource(eventUrl);
-
-eventSource.onmessage = (event) => {
-  console.log(event)
-}
-  return <></>
-}
->>>>>>> 964e2b4f224d5cfb112bc7a3f1938e85031788fa
 export default EventMessage;
