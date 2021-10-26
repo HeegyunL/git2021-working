@@ -1,4 +1,4 @@
-package com.git.helloproducer;
+package com.git.Helloproducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
