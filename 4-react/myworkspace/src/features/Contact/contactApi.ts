@@ -39,7 +39,7 @@ export interface ContactItemResponse{
 
     remove:(id:number) =>
     axios.delete<boolean>(`${"http://localhost:8080"}/contacts/${id}`),
-
+      
     modify:(id:number, contactItem : ContactItemRequest) =>
     axios.put<ContactItemResponse>(
       `${"http://localhost:8080"}/contacts/${id}`,

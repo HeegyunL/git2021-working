@@ -15,3 +15,4 @@ export const INITIAL_EVENTS: EventInput[] = [
     start: todayStr + "T12:00:00"
   }
 ];
+
