@@ -21,6 +21,8 @@ npm install node-sass
 npm install react-router-dom
 npm install @types/react-router-dom
 
+npx create-react-app 폴더이름 --template typescript
+
 -- Redux 환경구성 및 초기 셋업 ---------------------------------
 1. redux 및 redux-tookit 라이브러리 설치
 npm install @reduxjs/toolkit react-redux
