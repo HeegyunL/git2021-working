@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
+import Layout from "../components/layout";
 
 const Home: NextPage = () => {
   return (
+    <Layout>
     <div >
     <header >
         PT MARKET
@@ -96,6 +98,7 @@ const Home: NextPage = () => {
       </div>
     </body>
   </div>
+</Layout>
   )
 }
 
