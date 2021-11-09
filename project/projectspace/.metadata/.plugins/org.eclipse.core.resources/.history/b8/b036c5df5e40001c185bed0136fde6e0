@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # jdbc - java databse connector
+    # :postresql - 데이터베이스 엔진
+    # //url - 데이터베이스 주소
+    # :5432 - 데이터베이스 접속 포트
+    # /postgres - 접속할 데이터베이스
+    url: jdbc:postgresql://database-1.cgcggfyysoku.ap-northeast-2.rds.amazonaws.com:5432/postgres?currentSchema=myworkspace
+    username: postgres_gagym
+    password: password123!

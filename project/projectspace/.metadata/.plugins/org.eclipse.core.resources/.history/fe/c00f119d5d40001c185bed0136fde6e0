@@ -1,0 +1,7 @@
+package com.git.gagymservice.partner;
+
+
+@Repository
+public interface PartnerRepository {
+
+}
